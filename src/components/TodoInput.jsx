@@ -7,6 +7,11 @@ export default function TodoInput(props) {
   return (
     <header>
       <input 
+      onKeyDown={(e) => {
+        if (e.key === 'Enter') {
+          handleAddTodos(todoValue)
+        }
+      }}
       onChange={
         (e) => {setTodoValue(e.target.value)}
       } 
