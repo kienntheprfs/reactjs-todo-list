@@ -1,5 +1,5 @@
 import React from 'react'
-import {useState} from 'react'
+
 export default function TodoInput(props) {
   const {handleAddTodos} = props
   const {todoValue, setTodoValue} = props
@@ -7,6 +7,9 @@ export default function TodoInput(props) {
   return (
     <header>
       <input 
+      // BIND the input field to the todoValue state, 
+      // whenever the todoValue state changes, the input field will also change
+      value={todoValue}
       onKeyDown={(e) => {
         if (e.key === 'Enter') {
           handleAddTodos(todoValue)

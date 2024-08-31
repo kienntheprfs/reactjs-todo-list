@@ -25,12 +25,16 @@ export default function App() {
     })
     setTodos(newTodos)
   }
-
+  const handleEditTodos = (index) => {
+    const todoTobeEdited = todos[index]
+    setTodoValue(todoTobeEdited)
+    handleDeleteTodos(index)
+  }
 
   return (
     <> 
       <TodoInput todoValue={todoValue} setTodoValue={setTodoValue} handleAddTodos={handleAddTodos}/>
-      <TodoList todos={todos} handleDeleteTodos={handleDeleteTodos}/>
+      <TodoList todos={todos} handleDeleteTodos={handleDeleteTodos} handleEditTodos={handleEditTodos}/>
     </>
   )
 }
