@@ -17,6 +17,7 @@ export default function App() {
   //Any elements in a React component must be immutable, only the state is mutable
   const handleAddTodos = (todo) => { 
     setTodos([...todos, todo])
+    setTodoValue('')
   }
   
   const handleDeleteTodos = (index) => {
